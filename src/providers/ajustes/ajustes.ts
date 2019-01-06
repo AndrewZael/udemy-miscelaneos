@@ -10,7 +10,6 @@ export class AjustesProvider {
   }
   constructor(private platform:Platform,
               private storage:Storage) {
-    console.log('Hello AjustesProvider Provider')
   }
 
   cargar_storage(){
@@ -18,10 +17,8 @@ export class AjustesProvider {
     let promesa = new Promise((resolve, reject)=> {
       if(this.platform.is('cordova')){
         //Mobile
-        console.log('Inicializando Stotrage')
         this.storage.ready().then(
             ()=>{
-              console.log('Storage Ready')
               this.storage.get('ajustes').then(
                 config=>{
                   if(config){
@@ -51,9 +48,7 @@ export class AjustesProvider {
        //Mobile
        this.storage.ready().then(
           ()=> {
-            console.log('Storage OK')
             this.storage.set('ajustes', this.ajustes)
-            console.log('Storage Guardado: ' + this.ajustes)
           }
        )
 

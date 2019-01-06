@@ -15,7 +15,7 @@ export class MyApp {
   public rootPage:any
   public mostrarTutorial:boolean
 
-  constructor(platform: Platform, 
+  constructor(private platform: Platform, 
               statusBar: StatusBar, 
               splashScreen: SplashScreen,
               private _ajustes:AjustesProvider) {
@@ -28,6 +28,19 @@ export class MyApp {
                     }else{
                       this.rootPage = HomePage
                     }
+
+                    this.platform.pause.subscribe(
+                      ()=>{
+                        console.log('App se detendra')
+                      }
+                    )
+
+                    this.platform.resume.subscribe(
+                      ()=>{
+                        console.log('App ha regresado')
+                      }
+                    )
+
                     statusBar.styleDefault();
                     splashScreen.hide();
               })
