@@ -4,8 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { MyApp } from './app.component'
+import { HomePage } from '../pages/home/home'
+import { IntroPage } from '../pages/intro/intro'
 
 //pages
 import { Pagina2Page } from '../pages/pagina2/pagina2'
@@ -20,22 +21,24 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
   declarations: [
     MyApp,
     HomePage,
-    Pagina2Page
+    Pagina2Page,
+    IntroPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    Pagina2Page
+    Pagina2Page,
+    IntroPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    IonicStorageModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AjustesProvider
   ]
