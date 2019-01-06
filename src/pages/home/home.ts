@@ -9,8 +9,10 @@ import { Pagina2Page } from '../pagina2/pagina2'
 export class HomePage {
 
   public pagina2
+  public alertConfirm
+
   constructor(public navCtrl: NavController) {
-    this.pagina2 = Pagina2Page
+        this.pagina2 = Pagina2Page
   }
 
 }
